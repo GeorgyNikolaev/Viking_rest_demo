@@ -29,4 +29,24 @@ public class VikingService {
         vikings.add(viking);
         return viking;
     }
+
+    public Viking addViking(Viking viking) {
+        vikings.add(viking);
+        return viking;
+    }
+
+    public void deleteViking(int index) throws IllegalArgumentException{
+        if (index >= 0 && index < vikings.size()) {
+            vikings.remove(index);
+        }
+        else
+            throw new IllegalArgumentException("Такого индекса не существует");
+    }
+
+    public void updateViking(int index, Viking viking) throws IllegalArgumentException {
+        if (index >= 0 && index < vikings.size()) {
+            vikings.set(index, viking);
+        } else
+            throw new IllegalArgumentException("Такого индекса не существует");
+    }
 }
